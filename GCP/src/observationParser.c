@@ -397,7 +397,7 @@ int parseGNSSObservationHeader(char* line, GNSSObservationHeader* header, char* 
     {
         strncpy(header->observerName, line, 20);
         header->observerName[20] = 0;
-        strncpy(header->agency, line, 40);
+        strncpy(header->agency, &(line[20]), 40); // mistake
         header->agency[40] = 0;
     }
 
